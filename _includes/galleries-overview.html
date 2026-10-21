@@ -1,0 +1,24 @@
+{% assign count = 0 %}
+{% assign align = "left" %}
+{% for gallery in site.data.galleries.overview %}
+{% assign dir = gallery.picture_path | default: gallery.directory %}
+{% assign thumb = '/assets/photography/' | append: dir | append: '/' | append: gallery.preview.thumbnail %}
+{% assign link = '/photography/' | append: gallery.directory | append: '.html' %}
+{% if count == 0 %}<div class="row">{% endif %}
+  <div class="half-width gallery-preview {{ align }}">
+    <h1>{{ gallery.title }}</h1>
+    <a href="{{ link | relative_url }}">
+      <img alt="{{ gallery.title | escape }}" loading="lazy" src="{{ thumb | relative_url }}" />
+    </a>
+  </div>
+{% if count == 1 %}</div>{% endif %}
+{% assign count = count | plus: 1 %}
+{% assign align = "right" %}
+{% if count >= 2 %}
+{% assign align = "left" %}
+{% assign count = 0 %}
+{% endif %}
+{% endfor %}
+{% if count == 1 %}
+</div>
+{% endif %}

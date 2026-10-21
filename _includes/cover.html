@@ -1,0 +1,13 @@
+{% comment %}
+  Cover image and its alt text come from _config.yml (cover_image / cover_alt)
+  so changing the homepage photo never means editing a template.
+{% endcomment %}
+<div class="cover">
+  <a href="{{ '/photography/' | relative_url }}">
+    {% if site.cover_image and site.cover_image != "" %}
+    <img class="cover-image"
+         alt="{{ site.cover_alt | default: site.title | escape }}"
+         src="{{ '/assets/photography/coverpage/' | append: site.cover_image | relative_url }}" />
+    {% endif %}
+  </a>
+</div>

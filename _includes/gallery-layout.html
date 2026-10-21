@@ -1,0 +1,39 @@
+{% assign gdir = include.gallery.picture_path %}
+<div id="image-gallery{% if include.id_number %}-{{ include.id_number }}{% endif %}" class="image-gallery">
+  <div id="gallery-sizer{% if include.id_number %}-{{ include.id_number }}{% endif %}" class="gallery-sizer"></div>
+  {% for picture in include.gallery.pictures %}
+  {% assign full = '/assets/photography/' | append: gdir | append: '/' | append: picture.sizes.last %}
+  {% assign thumb = '/assets/photography/' | append: gdir | append: '/' | append: picture.thumbnail %}
+  <div class="image-wrapper">
+    <a href="{{ full | relative_url }}"
+    data-responsive="{% for size in picture.sizes %}{% assign cand = '/assets/photography/' | append: gdir | append: '/' | append: size %}{{ cand | relative_url }} {{ size | split: '-' | last | split: '.' | first | split: 'x' | first | strip }}{% unless forloop.last %},{% endunless %}{% endfor %}" class="image"
+    {% if picture.title %} data-sub-html="<div class='lg-toolbar caption'><h4>{{ picture.title | escape }}</h4>{% if picture.caption %}<p>{{ picture.caption | escape }}</p>{% endif %}</div>"{% endif %}>
+      <img alt="{{ picture.title | default: page.title | escape }}" loading="lazy" src="{{ thumb | relative_url }}" />
+    </a>
+  </div>
+  {% endfor %}
+</div>
+
+<script>
+$(document).ready(function() {
+  var $gallery{% if include.id_number %}{{ include.id_number }}{% endif %} = $("#image-gallery{% if include.id_number %}-{{ include.id_number }}{% endif %}").lightGallery({
+    thumbnail: false,
+    selector: '.image',
+    width: '80%'
+  });
+});
+
+// init isotope
+var $grid{% if include.id_number %}{{ include.id_number }}{% endif %} = $('#image-gallery{% if include.id_number %}-{{ include.id_number }}{% endif %}').isotope({
+  percentPosition: true,
+  columnWidth: '#gallery-sizer{% if include.id_number %}-{{ include.id_number }}{% endif %}',
+  itemSelector: '.image-wrapper',
+  layoutMode: "masonry"
+});
+
+// layout Isotope after each image loads
+$grid{% if include.id_number %}{{ include.id_number }}{% endif %}.imagesLoaded().progress( function() {
+  $grid{% if include.id_number %}{{ include.id_number }}{% endif %}.isotope('layout');
+});
+
+</script>

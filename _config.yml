@@ -1,0 +1,40 @@
+# Site settings
+#
+# NOTE: this file is NOT reloaded by `jekyll serve`. Restart after editing.
+
+title: "Jean-Claude Boniface"
+email: ""                       # public contact address; empty hides the footer link
+description: "Portfolio photographique"
+lang: "fr"
+
+# Cover image shown on the homepage. Lives in assets/photography/coverpage/.
+cover_image: "DSC1780-1000x668.jpg"
+cover_alt: "Photographies de Jean-Claude Boniface"
+
+# `baseurl` must equal the repository name for a GitHub Pages *project* site.
+# It governs LOCAL builds only -- the Actions workflow overrides it with
+# `--baseurl "${{ steps.pages.outputs.base_path }}"`, so a custom domain needs
+# no change here.
+baseurl: "/JCfoto"
+
+# `url` is NOT overridden by CI and is used for canonical/absolute URLs.
+# When a custom domain is attached, change THIS to the domain.
+url: "https://bonantine.github.io"
+
+instagram_username:             # handle without the @, or leave blank
+
+# Build settings
+markdown: kramdown
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+defaults:
+  -
+    scope:
+      path: "photography"
+    values:
+      permalink: /:path/:basename:output_ext
+
+exclude: [LICENSE-CODE.md, README.md, tools, Gemfile, Gemfile.lock]

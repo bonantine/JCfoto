@@ -1,0 +1,20 @@
+# Portfolio index cards. Array order = display order, two cards per row.
+# Each `preview` block mirrors the one in _data/galleries/<directory>.yml.
+-
+  title: Camargue
+  directory: camargue
+  picture_path: camargue
+  preview:
+    filename: DSC1728
+    sizes:
+    - DSC1728-1000x668.jpg
+    thumbnail: DSC1728-thumbnail.jpg
+-
+  title: Série 1
+  directory: serie1
+  picture_path: serie1
+  preview:
+    filename: DSC3518
+    sizes:
+    - DSC3518-1000x668.jpg
+    thumbnail: DSC3518-thumbnail.jpg

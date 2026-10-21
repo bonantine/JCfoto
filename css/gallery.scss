@@ -1,0 +1,101 @@
+---
+---
+$default-width: 50%;
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+/* force scrollbar, prevents initial gap */
+html {
+  overflow-y: scroll;
+}
+.image-wrapper,
+.gallery-sizer {
+  width: $default-width;
+}
+.image-gallery {
+  display: block;
+  .image-wrapper {
+    float: left;
+    padding: 10px;
+    // hack required if no padding
+    .image {
+      width: 100.1%;
+      width: calc( 100% + 1px );
+      height: 100%;
+    }
+  }
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+.caption {
+  position: static;
+  color: #AAA;
+}
+
+/* Customize lightGallery backdrop background color */
+.lg-backdrop {
+  background-color: rgba(255, 255, 255, 1) !important;
+}
+
+/* Hide the lightGallery toolbar */
+.lg-toolbar {
+  display: none !important;
+}
+
+
+/* Customize lightGallery navigation arrows */
+.lg-outer .lg-prev,
+.lg-outer .lg-next {
+  background-color: rgba(0, 0, 0, 1) !important; /* Semi-transparent background */
+  width: 50px !important; /* Width of the arrow buttons */
+  height: 100px !important; /* Height of the arrow buttons */
+  opacity: 0.7 !important; /* Opacity of the arrows */
+  transition: opacity 0.3s ease !important; /* Smooth hover effect */
+}
+
+/* Position the arrows outside the image */
+.lg-outer .lg-prev {
+  left: -60px !important; /* Move the left arrow outside the image */
+}
+
+.lg-outer .lg-next {
+  right: -60px !important; /* Move the right arrow outside the image */
+}
+
+/* Increase opacity on hover */
+.lg-outer .lg-prev:hover,
+.lg-outer .lg-next:hover {
+  opacity: 1 !important;
+}
+
+
+/* Ensure the image container has space for the arrows */
+.lg-outer .lg-inner {
+  margin: 0 70px !important; /* Add space on the sides for the arrows */
+}
+
+/* Small screens: no side gutters (they cropped the photo), arrows overlaid */
+@media screen and (max-width: 800px) {
+  .lg-outer .lg-inner {
+    margin: 0 !important;
+  }
+  .lg-outer .lg-prev {
+    left: 8px !important;
+  }
+  .lg-outer .lg-next {
+    right: 8px !important;
+  }
+}
+
+/* Small screens: single-column photo grid */
+@media screen and (max-width: 600px) {
+  .image-wrapper,
+  .gallery-sizer {
+    width: 100%;
+  }
+}

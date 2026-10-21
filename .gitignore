@@ -1,0 +1,29 @@
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+.DS_Store
+
+# Full-resolution originals are kept OUT of the repository; only the generated
+# web sizes are committed.
+#
+# The whitelist below names the exact sizes tools/mkweb.sh produces (600px
+# thumbnail, then the 1000/1600/2800 ladder). It is deliberately NOT a generic
+# `*-[0-9]*x[0-9]*.jpg` pattern: that also matches full-resolution exports such
+# as `IMG_1234-6000x4000.jpg`, which is how the original fotopage repository
+# grew a 374 MB history.
+#
+# If you change LADDER or THUMB_LONG in tools/mkweb.sh, update this list too --
+# in BOTH orientations, because the long edge lands in either position. The
+# script fails loudly if it writes a file this list would exclude.
+assets/photography/**
+!assets/photography/**/
+!assets/photography/**/*-thumbnail.jpg
+!assets/photography/**/*-600x[0-9]*.jpg
+!assets/photography/**/*-[0-9]*x600.jpg
+!assets/photography/**/*-1000x[0-9]*.jpg
+!assets/photography/**/*-[0-9]*x1000.jpg
+!assets/photography/**/*-1600x[0-9]*.jpg
+!assets/photography/**/*-[0-9]*x1600.jpg
+!assets/photography/**/*-2800x[0-9]*.jpg
+!assets/photography/**/*-[0-9]*x2800.jpg

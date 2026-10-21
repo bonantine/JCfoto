@@ -1,0 +1,11 @@
+<footer class="site-footer">
+
+  <div class="wrapper">
+    <ul class="footer-links">
+      {% if site.email and site.email != "" %}<li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>{% endif %}
+      {% if site.instagram_username and site.instagram_username != "" %}<li>{% include icon-instagram.html username=site.instagram_username %}</li>{% endif %}
+    </ul>
+    <p class="copyright">&copy; {{ site.time | date: "%Y" }} {{ site.title }} &middot; Tous droits réservés</p>
+  </div>
+
+</footer>
