@@ -1,5 +1,7 @@
 # Portfolio index cards. Array order = display order, two cards per row.
 # Each `preview` block mirrors the one in _data/galleries/<directory>.yml.
+# Prefer a landscape preview: the two cards in a row sit side by side, so a
+# portrait thumbnail makes one card much taller than its neighbour.
 -
   title: Camargue
   directory: camargue
@@ -10,11 +12,11 @@
     - DSC1728-1000x668.jpg
     thumbnail: DSC1728-thumbnail.jpg
 -
-  title: Série 1
-  directory: serie1
-  picture_path: serie1
+  title: Arbres
+  directory: arbres
+  picture_path: arbres
   preview:
-    filename: DSC3518
+    filename: DSC1317-3
     sizes:
-    - DSC3518-1000x668.jpg
-    thumbnail: DSC3518-thumbnail.jpg
+    - DSC1317-3-1000x668.jpg
+    thumbnail: DSC1317-3-thumbnail.jpg

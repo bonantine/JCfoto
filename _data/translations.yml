@@ -2,5 +2,13 @@ fr:
   nav_about: À propos
   nav_portfolio: Portfolio
   # Texte de présentation affiché sur la page « À propos ».
-  # TODO: à rédiger.
-  about_text: ""
+  # Les lignes vides séparent les paragraphes.
+  about_text: |
+    Je cherche la beauté dans les paysages, dans la lumière qui les traverse,
+    dans les silences et les formes qui les habitent.
+
+    L'arbre occupe une place particulière dans mon regard. Sa présence, ses lignes,
+    sa manière d'habiter l'espace me touche énormément.
+
+    Photographier, c'est pour moi apprendre à regarder, prendre le temps et laisser
+    l'image ouvrir un espace de contemplation.
