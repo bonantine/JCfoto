@@ -20,3 +20,12 @@
     sizes:
     - DSC1317-3-1000x668.jpg
     thumbnail: DSC1317-3-thumbnail.jpg
+-
+  title: Sur le toît du Corbusier
+  directory: corbusier
+  picture_path: corbusier
+  preview:
+    filename: DSC_0007
+    sizes:
+    - DSC_0007-1000x665.jpg
+    thumbnail: DSC_0007-thumbnail.jpg
